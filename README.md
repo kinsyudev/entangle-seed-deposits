@@ -22,7 +22,8 @@ sqd serve
 
 ## Final data
 
-All the final data can be found in the [data](https://github.com/kinsyudev/entangle-seed-deposits/tree/main/data) folder
+All the final data can be found in the [data](https://github.com/kinsyudev/entangle-seed-deposits/tree/main/data) folder.
+
 
 ## Verify the data
 
