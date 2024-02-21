@@ -1,17 +1,3 @@
-[![Open in Gitpod](https://gitpod.io/button/open-in-gitpod.svg)](https://gitpod.io/#https://github.com/subsquid-labs/evm-logs-example)
-
-# USDC transfers indexing squid
-
-This example squid indexes USDC transfers by tracking the historical `Transfer(address,address,uint256)` logs emitted by the [USDC contract](https://etherscan.io/address/0xa0b86991c6218b36c1d19d4a2e9eb0ce3606eb48) on the Ethereum Mainnet. 
-For an extensive reference of Squid SDK and the Subsquid ecosystem, go to the [docs](https://docs.subsquid.io).
-
-One can use this example as a template for scaffolding a new squid project with [`sqd init`](https://docs.subsquid.io/squid-cli/):
-
-```bash
-sqd init my-new-squid --template https://github.com/subsquid-labs/evm-logs-example
-```
-
-
 ## Prerequisites
 
 - Node v16.x
@@ -33,3 +19,26 @@ sqd process
 # starts the GraphQL API server at localhost:4350/graphql
 sqd serve
 ```
+
+## Final data
+
+All the final data can be found in the [data](https://github.com/kinsyudev/entangle-seed-deposits/tree/main/data) folder
+
+## Verify the data
+
+In order to verify the data, simply run the squid, and once it's done processing. In the GraphQL explorer, use the following query:
+```gql
+query Deposits {
+  accounts(orderBy: totalDeposits_DESC) {
+    id
+    totalDeposits
+    deposits {
+      amount
+      id
+      txHash
+    }
+  }
+}
+```
+
+It'll match exactly with `data/all-deposits.json`
