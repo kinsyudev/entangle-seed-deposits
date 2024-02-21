@@ -20,7 +20,7 @@ sqd process
 sqd serve
 ```
 
-## Verify 
+## Running
 
 In order to verify the data, simply run the squid, and once it's done processing. In the GraphQL explorer, use the following query:
 
